@@ -9,12 +9,16 @@
 <body>
   <header>
     <h1>Hi, I'm Vishnu 👋</h1>
-    <p>Computer Science student & Web Developer</p>
+    <p>Computer Science student who is learning to be a Web Developer</p>
+  </header>
+
+  <header>
+    <button id="toggle-dark">Toggle Dark Mode 🌙</button>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I'm a CSE undergrad at a tier‑1 college in India...</p>
+    <p>I'm a CSE undergrad at BMSCE (Tier2) college in India...</p>
   </section>
 
   <section id="projects">
@@ -28,12 +32,19 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
+    <p>Email: <a href="mailto:youremail@example.com">vishnumashalkar@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/vishnu-mashalkar-7807b132a/" target="_blank">yourprofile</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 Vishnu Mashalkar</p>
   </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-dark');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>

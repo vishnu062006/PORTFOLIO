@@ -55,3 +55,18 @@
     font-size: 0.9rem;
     color: #777;
   }
+
+  /* Dark mode styles: when .dark-mode class is on <body> */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+  }
+  
+  body.dark-mode section {
+    background: #2c2c2c;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+  }
+  
+  body.dark-mode a {
+    color: #4ea3ff;
+  }
