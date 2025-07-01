@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+    <!-- AOS CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,  // animation duration in ms
+    once: true      // animate only once
+  });
+</script>
+
 <body>
   <!-- Top-right dark mode toggle (without text) -->
   <div class="dark-toggle">
@@ -22,12 +36,12 @@
     <p>Computer Science student on his way to be a Web Developer</p>
   </header>
 
-  <section id="about">
+  <section id="about" data-aos="fade up">
     <h2>WHO AM I ??</h2>
     <p>Hey, DeVish here. I'm just another engineering student out there. Im doing by undergrad at BMSCE. This is my first attempt on creating a website so please drop in your suggestions and ideas as there is always room for improvement.</p>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-aos="fade up">
     <h2>Projects</h2>
     <ul>
       <li>Personal Portfolio Website</li>
@@ -36,7 +50,7 @@
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade up">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:vishnumashalkar@gmail.com">vishnumashalkar@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/vishnu-mashalkar-7807b132a/" target="_blank">VISHNU MASHALKAR</a></p>
