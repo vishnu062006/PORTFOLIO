@@ -1,11 +1,10 @@
-/* Reset some default spacing and box sizing */
+/* Reset & base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Body styles with smooth transition */
   body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -15,25 +14,21 @@
     transition: background-color 0.4s, color 0.4s;
   }
   
-  /* Top header text */
   header {
     text-align: center;
     margin-bottom: 40px;
   }
   
-  /* Main title */
   h1 {
     font-size: 2.5rem;
     color: #2c3e50;
   }
   
-  /* Section headings */
   h2 {
     margin-bottom: 10px;
     color: #34495e;
   }
   
-  /* Sections styling with smooth background transition */
   section {
     background: #fff;
     padding: 20px;
@@ -43,13 +38,11 @@
     transition: background 0.4s, box-shadow 0.4s;
   }
   
-  /* Lists */
   ul {
     list-style-type: disc;
     padding-left: 20px;
   }
   
-  /* Links with transition */
   a {
     color: #3498db;
     text-decoration: none;
@@ -60,7 +53,6 @@
     text-decoration: underline;
   }
   
-  /* Footer text */
   footer {
     text-align: center;
     margin-top: 40px;
@@ -68,27 +60,52 @@
     color: #777;
   }
   
-  /* Toggle dark mode button styled & fixed at top-right */
-  #toggle-dark {
+  /* Toggle switch top-right */
+  .switch {
     position: fixed;
     top: 20px;
     right: 20px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    background: #3498db;
-    color: white;
-    font-size: 1rem;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    transition: background 0.3s, color 0.3s;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
   }
   
-  #toggle-dark:hover {
-    background: #2980b9;
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
   }
   
-  /* Dark mode styles: activated when body has .dark-mode */
+  input:checked + .slider {
+    background-color: #3498db;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(24px);
+  }
+  
+  /* Dark mode */
   body.dark-mode {
     background-color: #1e1e1e;
     color: #f1f1f1;

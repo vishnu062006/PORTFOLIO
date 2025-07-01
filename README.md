@@ -21,4 +21,4 @@ This is my personal portfolio website built with HTML & CSS.
 
 ## 📬 Contact
 - Email: vishnumashalkar@gmail.com
-- LinkedIn: [your-linkedin-profile](https://www.linkedin.com/in/vishnu-mashalkar-7807b132a/)
+- LinkedIn: [VISHNU MASHALKAR](https://www.linkedin.com/in/vishnu-mashalkar-7807b132a/)
