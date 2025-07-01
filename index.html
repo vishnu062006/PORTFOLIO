@@ -22,6 +22,7 @@
 
   <!-- Hamburger menu with logo -->
   <nav class="hamburger-menu">
+    <div class="logo">DeVish</div>
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="menu-icon">
       <span></span>
@@ -40,7 +41,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Hi, I'm Vishnu Mashalkar a.k.a. DeVish 🧑🏻‍💻</h1>
-      <p>Student | Gamer | Web Developer |</p>
+      <p><span class="typed-text"></span></p>
       <a href="#PROJECTS" class="hero-btn">See my work ↓</a>
     </div>
   </section>
@@ -52,24 +53,20 @@
 
   <section id="ABOUT" data-aos="fade-up">
     <h2>WHO AM I ??</h2>
-    <p>👋 Hey there!
-        I’m DeVish — an engineering student currently doing my undergrad at BMSCE, and this is my corner of the internet.
-        
-        I’ve always been someone who loves building, tweaking, and exploring how things work — whether that’s writing my first few lines of code, tuning a gaming setup, or reading up on how a superbike channels raw power into controlled speed.
-        
-        When I’m not buried under assignments or debugging something that worked perfectly yesterday, you’ll probably catch me:
-            •	🎮 Getting lost in immersive, story-driven games (I’m the guy who actually explores every side quest)
-            
-            •	🏍️ Geeking out over superbikes like the BMW S1000RR or Ninja H2, comparing torque curves and dreaming about my future garage
-            
-            •	🛠️ Experimenting with monitors, refresh rates, and setups to squeeze out that perfect gaming experience
-            
-            •	📱 Following the latest in tech — from CPUs and GPUs to the newest gadgets that make life just a bit more interesting
-        
-        This website is my first real dive into web development, and while it’s far from perfect, it feels great to finally bring together a few of the things I love on one page.
-        
-        So take a look around, and if you have any thoughts, ideas, or just want to talk bikes, gaming, or tech — drop your suggestions or feedback!
-        After all, there’s always room to learn, improve, and keep leveling up.</p>
+    <ul>
+      <li>👋 Hey there! I’m DeVish — an engineering student currently doing my undergrad at BMSCE, and this is my corner of the internet.</li>
+      <li>I love building, tweaking, and exploring how things work — whether that's writing my first few lines of code, tuning a gaming setup, or reading up on how a superbike channels raw power into controlled speed.</li>
+      <li>When I’m not buried under assignments or debugging something that worked perfectly yesterday, you’ll probably catch me:
+        <ul>
+          <li>🎮 Getting lost in immersive, story-driven games</li>
+          <li>🏍️ Geeking out over superbikes like the BMW S1000RR or Ninja H2</li>
+          <li>🛠️ Experimenting with monitors, refresh rates, and setups</li>
+          <li>📱 Following the latest in tech</li>
+        </ul>
+      </li>
+      <li>This website is my first real dive into web development, and while it’s far from perfect, it feels great to finally bring together a few of the things I love on one page.</li>
+      <li>So take a look around, and if you have any thoughts or ideas — drop your suggestions or feedback!</li>
+    </ul>
   </section>
 
   <section id="PROJECTS" data-aos="fade-up">
@@ -116,10 +113,7 @@
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
+    AOS.init({ duration: 800, once: true });
 
     // Dark mode toggle + remember choice
     const toggle = document.getElementById('toggle-dark');
@@ -146,5 +140,18 @@
       });
     });
   </script>
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script>
+    new Typed('.typed-text', {
+      strings: ["Student", "Web Developer", "Gamer", "Rider"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1500,
+      loop: true
+    });
+  </script>
+  
 </body>
 </html>
