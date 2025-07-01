@@ -233,5 +233,24 @@ particlesJS('particles-js', {
       observer.observe(counter);
     });
 </script>
+<!-- Easter egg JS -->
+<script>
+    let secret = "";
+    const easterCode = "vishnu"; // secret word to type
+    
+    document.addEventListener("keydown", (e) => {
+      secret += e.key.toLowerCase();
+      if(secret.includes(easterCode)){
+        const egg = document.getElementById("easter-egg");
+        egg.style.display = "block";
+        setTimeout(() => egg.style.display = "none", 3000); // hide after 3 sec
+        secret = ""; // reset
+      }
+      // limit secret length
+      if(secret.length > easterCode.length) {
+        secret = secret.slice(-easterCode.length);
+      }
+    });
+</script>
 </body>
 </html>
