@@ -60,51 +60,6 @@
     color: #777;
   }
   
-  /* Toggle switch top-right */
-  .switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: inline-block;
-    width: 50px;
-    height: 26px;
-  }
-  
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-  }
-  
-  input:checked + .slider {
-    background-color: #3498db;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(24px);
-  }
-  
   /* Dark mode */
   body.dark-mode {
     background-color: #1e1e1e;
@@ -119,42 +74,35 @@
   body.dark-mode a {
     color: #4ea3ff;
   }
-
-  /* Top horizontal bar with dark mode context */
-.topbar {
+  
+  /* Top-right dark mode toggle with label */
+  .dark-toggle {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #f9f9f9;
-    color: #333;
+    top: 20px;
+    right: 20px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    gap: 10px;
-    font-size: 1rem;
+    gap: 8px;
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.8);
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background 0.4s, color 0.4s;
     z-index: 1000;
-    transition: background-color 0.4s, color 0.4s;
   }
   
-  /* Adjust page padding to avoid content hidden under topbar */
-  body {
-    padding-top: 60px;
-  }
-  
-  /* In dark mode: topbar changes */
-  body.dark-mode .topbar {
-    background: #2c2c2c;
+  /* Dark mode: adjust toggle bg */
+  body.dark-mode .dark-toggle {
+    background: rgba(44,44,44,0.8);
     color: #f1f1f1;
   }
   
-  /* Switch (same as before) */
+  /* Switch styles (same as before) */
   .switch {
     display: inline-block;
-    width: 50px;
-    height: 26px;
+    width: 40px;
+    height: 20px;
   }
   
   .switch input {
@@ -177,8 +125,8 @@
   .slider:before {
     position: absolute;
     content: "";
-    height: 20px;
-    width: 20px;
+    height: 14px;
+    width: 14px;
     left: 3px;
     bottom: 3px;
     background-color: white;
@@ -191,5 +139,5 @@
   }
   
   input:checked + .slider:before {
-    transform: translateX(24px);
+    transform: translateX(20px);
   }
