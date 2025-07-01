@@ -20,6 +20,8 @@
     </label>
   </div>
 
+  <div id="particles-js"></div>
+
   <!-- Hamburger menu with logo -->
   <nav class="hamburger-menu">
     <div class="logo">DeVish</div>
@@ -67,6 +69,28 @@
       <li>This website is my first real dive into web development, and while it’s far from perfect, it feels great to finally bring together a few of the things I love on one page.</li>
       <li>So take a look around, and if you have any thoughts or ideas — drop your suggestions or feedback!</li>
     </ul>
+  </section>
+
+  <section id="STATS" data-aos="fade-up">
+    <h2>Fun Stats</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" data-target="1">0</div>
+        <p>✨ Years coding</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-target="1">0</div>
+        <p>📂 Projects built</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-target="350">0</div>
+        <p>🎮 Hours gaming</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-target="1">0</div>
+        <p>🏍️ Rides</p>
+      </div>
+    </div>
   </section>
 
   <section id="PROJECTS" data-aos="fade-up">
@@ -167,5 +191,47 @@
           }
         });
     </script>
+    <!-- particles.js library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- initialize particles -->
+<script>
+particlesJS('particles-js', {
+  "particles": {
+    "number": { "value": 50 },
+    "size": { "value": 3 },
+    "color": { "value": "#b88cff" },
+    "line_linked": { "enable": true, "color": "#b88cff" },
+    "move": { "speed": 2 }
+  }
+});
+</script>
+<script>
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200; // lower is faster
+    
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+    
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      // Animate when section enters view
+      const observer = new IntersectionObserver(entries => {
+        if(entries[0].isIntersecting) {
+          updateCount();
+          observer.disconnect();
+        }
+      }, { threshold: 0.6 });
+      observer.observe(counter);
+    });
+</script>
 </body>
 </html>

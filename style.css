@@ -13,16 +13,16 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(-45deg, #d7c2ff, #f2e8ff, #b88cff);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
-  padding-top: 60px;
-  transition: background-color 0.4s, background 0.4s, color 0.4s;
-}
+    background: linear-gradient(-45deg, #d7c2ff, #f2e8ff, #b88cff, #91efff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    padding-top: 60px;
+    transition: background-color 0.4s, background 0.4s, color 0.4s;
+    font-family: 'Poppins', sans-serif;
+  }
 
 /* Hero section */
 .hero {
@@ -399,3 +399,39 @@ input:checked + .slider:before {
 #CONTACT button[type="submit"]:hover {
   background: #b88cff;
 }
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    top: 0;
+    left: 0;
+    z-index: -1;  /* keep it behind all content */
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .stat-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    backdrop-filter: blur(3px);
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #7a3db8;
+    margin-bottom: 5px;
+  }

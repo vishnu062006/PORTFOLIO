@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <!-- Lightbox CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.min.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
 
@@ -28,5 +29,15 @@
     // Initialize lightbox
     const lightbox = new SimpleLightbox('.gallery a', {});
   </script>
+
+  <section id="CONTACT" style="margin-top:40px; text-align:center;">
+    <h2>Contact Me</h2>
+    <form style="max-width:400px; margin:auto;">
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:8px; margin:8px 0; border-radius:4px; border:1px solid #ccc;">
+      <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:8px; margin:8px 0; border-radius:4px; border:1px solid #ccc;">
+      <textarea name="message" placeholder="Your Message" required style="width:100%; padding:8px; margin:8px 0; border-radius:4px; border:1px solid #ccc; height:100px;"></textarea>
+      <button type="submit" style="background:#7a3db8; color:#fff; border:none; padding:10px 20px; border-radius:4px; cursor:pointer;">Send</button>
+    </form>
+  </section>
 </body>
 </html>
