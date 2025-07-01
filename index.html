@@ -12,6 +12,8 @@
 </head>
 <body>
 
+    <div id="vanta-bg"></div>
+
   <!-- Dark mode toggle -->
   <div class="dark-toggle">
     <label class="switch">
@@ -251,6 +253,22 @@ particlesJS('particles-js', {
         secret = secret.slice(-easterCode.length);
       }
     });
+</script>
+<!-- three.js (required by Vanta) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<!-- vanta.js starfield effect -->
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.starfield.min.js"></script>
+<script>
+    VANTA.STARFIELD({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      speed: 0.8,
+      quantity: 2.0,
+      backgroundColor: 0x000000
+    })
 </script>
 </body>
 </html>

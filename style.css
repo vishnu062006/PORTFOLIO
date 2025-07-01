@@ -435,3 +435,27 @@ input:checked + .slider:before {
     color: #7a3db8;
     margin-bottom: 5px;
   }
+
+/* Easter egg message style */
+#easter-egg {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #7a3db8;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  z-index: 1500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+#vanta-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    left: 0;
+    z-index: -2; /* keep behind everything, even behind particles.js */
+  }
