@@ -23,7 +23,7 @@ body {
 
 /* Hero section */
 .hero {
-  background: linear-gradient(135deg, #7a3db8, #b88cff);
+  background: linear-gradient(135deg, #2ac3ee, #91efff);
   color: white;
   text-align: center;
   padding: 100px 20px 80px;
@@ -43,8 +43,8 @@ body {
 
 .hero-btn {
   display: inline-block;
-  background: white;
-  color: #7a3db8;
+  background: rgb(146, 236, 254);
+  color: #0e0e0e;
   padding: 10px 20px;
   border-radius: 30px;
   font-weight: 600;
