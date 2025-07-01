@@ -358,3 +358,44 @@ input:checked + .slider:before {
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
   }
+/* Contact form styles */
+#CONTACT {
+  margin-top: 40px;
+  text-align: center;
+}
+
+#CONTACT h2 {
+  color: #7a3db8;
+  margin-bottom: 10px;
+}
+
+#CONTACT form {
+  max-width: 400px;
+  margin: auto;
+}
+
+#CONTACT input[type="text"],
+#CONTACT input[type="email"],
+#CONTACT textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+}
+
+#CONTACT button[type="submit"] {
+  background: #7a3db8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+#CONTACT button[type="submit"]:hover {
+  background: #b88cff;
+}
