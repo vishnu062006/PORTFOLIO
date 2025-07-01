@@ -251,3 +251,6 @@ body.dark-mode .menu {
 body.dark-mode .menu a {
   color: #b88cff;
 }
+#menu-toggle {
+    display: none;
+  }
