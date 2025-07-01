@@ -14,7 +14,9 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #d7c2ff, #f2e8ff);
+  background: linear-gradient(-45deg, #d7c2ff, #f2e8ff, #b88cff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color: #333;
   line-height: 1.6;
   padding: 20px;
@@ -311,3 +313,48 @@ input:checked + .slider:before {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #7a3db8;
+    color: white;
+    font-size: 24px;
+    padding: 8px 14px;
+    border-radius: 50%;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 999;
+  }
+  
+  .back-to-top:hover {
+    background: #b88cff;
+  }
+
+  @keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
