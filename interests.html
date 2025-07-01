@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interests | DeVish</title>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.min.css" />
+</head>
+<body>
+
+  <h1 style="text-align:center; color:#7a3db8; margin-bottom:20px;">My Interests</h1>
+
+  <div class="gallery">
+    <a href="images/B1.jpg"><img src="images/B1.jpg" alt="Bike Ride"></a>
+    <a href="images/G1.JPG"><img src="images/G1.JPG" alt="Gaming"></a>
+    <a href="images/G2.JPG"><img src="images/G2.JPG" alt="Gaming"></a>
+    <a href="images/Game3.jpg.JPG"><img src="images/Game3.jpg.JPG" alt="Gaming"></a>
+    <!-- add more images -->
+  </div>
+
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.min.js"></script>
+  <script>
+    // Initialize lightbox
+    const lightbox = new SimpleLightbox('.gallery a', {});
+  </script>
+</body>
+</html>
