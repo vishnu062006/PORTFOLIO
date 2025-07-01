@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Dark mode toggle -->
   <div class="dark-toggle">
     <label class="switch">
@@ -19,9 +20,15 @@
     </label>
   </div>
 
+  <!-- Hamburger + logo -->
   <nav class="hamburger-menu">
+    <div class="logo">DeVish</div>
     <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
     <div class="menu">
       <a href="#ABOUT">About</a>
       <a href="#PROJECTS">Projects</a>
@@ -62,7 +69,7 @@
     <h2>OTHER INTERESTS</h2>
     <div class="project-cards">
       <div class="project-card">
-        <h3><a href="interests.html" target="_blank">GAMING</a></h3>
+        <h3><a href="interests.html" target="_blank">GALLERY</a></h3>
         <p>Explore my gaming, bike riding, and sports interests.</p>
       </div>
     </div>
@@ -90,13 +97,10 @@
     });
 
     const toggle = document.getElementById('toggle-dark');
-
-    // Check saved theme on load
     if (localStorage.getItem('darkMode') === 'enabled') {
       document.body.classList.add('dark-mode');
       toggle.checked = true;
     }
-
     toggle.addEventListener('change', () => {
       if (toggle.checked) {
         document.body.classList.add('dark-mode');
@@ -105,6 +109,17 @@
         document.body.classList.remove('dark-mode');
         localStorage.setItem('darkMode', 'disabled');
       }
+    });
+  </script>
+  <script>
+    // Close hamburger menu when any menu link is clicked
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuLinks = document.querySelectorAll('.menu a');
+  
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.checked = false;
+      });
     });
   </script>
 </body>

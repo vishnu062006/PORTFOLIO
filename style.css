@@ -176,8 +176,8 @@ input:checked + .slider:before {
 }
 
 .menu-icon {
-  width: 30px;
-  height: 24px;
+  width: 35px;
+  height: 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -186,10 +186,10 @@ input:checked + .slider:before {
 
 .menu-icon span {
   display: block;
-  height: 4px;
+  height: 6px;
   background: #7a3db8;
   border-radius: 2px;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
 /* Animate to X when open */
