@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <!-- AOS CSS -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DeVish | Vishnu Mashalkar | Portfolio</title>
-  <!-- Import Poppins font from Google Fonts -->
+  <!-- Google Fonts: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="style.css">
 </head>
-
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,  // animation duration in ms
-    once: true      // animate only once
-  });
-</script>
-
 <body>
-  <!-- Top-right dark mode toggle (without text) -->
+  <!-- Dark mode toggle -->
   <div class="dark-toggle">
     <label class="switch">
       <input type="checkbox" id="toggle-dark">
@@ -36,21 +24,30 @@
     <p>Computer Science student on his way to be a Web Developer</p>
   </header>
 
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>WHO AM I ??</h2>
     <p>Hey, DeVish here. I'm just another engineering student out there. Im doing by undergrad at BMSCE. This is my first attempt on creating a website so please drop in your suggestions and ideas as there is always room for improvement.</p>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
-    <ul>
-      <li>Personal Portfolio Website</li>
-      <li>Simple E-commerce Frontend (coming soon)</li>
-      <li>College Productivity Tool (coming soon)</li>
-    </ul>
+    <div class="project-cards">
+      <div class="project-card">
+        <h3>Personal Portfolio Website</h3>
+        <p>My first portfolio website built with HTML, CSS & JavaScript.</p>
+      </div>
+      <div class="project-card">
+        <h3>Simple E-commerce Frontend</h3>
+        <p>Basic frontend layout for an e-commerce site. (Coming soon)</p>
+      </div>
+      <div class="project-card">
+        <h3>College Productivity Tool</h3>
+        <p>Tool to manage tasks & notes. (Coming soon)</p>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:vishnumashalkar@gmail.com">vishnumashalkar@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/vishnu-mashalkar-7807b132a/" target="_blank">VISHNU MASHALKAR</a></p>
@@ -63,15 +60,22 @@
     <p>&copy; 2025 Vishnu Mashalkar</p>
   </footer>
 
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
     const toggle = document.getElementById('toggle-dark');
-  
+
     // Check saved theme on load
     if (localStorage.getItem('darkMode') === 'enabled') {
       document.body.classList.add('dark-mode');
       toggle.checked = true;
     }
-  
+
     toggle.addEventListener('change', () => {
       if (toggle.checked) {
         document.body.classList.add('dark-mode');

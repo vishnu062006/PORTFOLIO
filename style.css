@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Reset & base */
+/* Base */
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +9,9 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
+  background: linear-gradient(135deg, #d7c2ff, #f2e8ff);
   color: #333;
-  background: linear-gradient(135deg, #f9f9f9, #e0f2ff);
+  line-height: 1.6;
   padding: 20px;
   padding-top: 60px;
   transition: background-color 0.4s, background 0.4s, color 0.4s;
@@ -24,28 +24,51 @@ header {
 }
 
 h1 {
-  font-size: 2.5rem;
-  color: #2c3e50;
+  font-size: 2.2rem;
+  color: #5b2a9d;
 }
 
 h2 {
   margin-bottom: 10px;
-  color: #34495e;
+  color: #7a3db8;
 }
 
 /* Sections */
 section {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  backdrop-filter: blur(2px);
+}
+
+/* Project cards */
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  backdrop-filter: blur(3px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 /* Links */
 a {
-  color: #3498db;
+  color: #7a3db8;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover {
@@ -60,27 +83,31 @@ footer {
   color: #777;
 }
 
-/* Dark mode styles */
+/* Dark mode */
 body.dark-mode {
-  background-color: #1e1e1e;
+  background-color: #1e1e2f;
   color: #f1f1f1;
 }
 
 body.dark-mode section {
-  background: #2c2c2c;
-  box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+  background: rgba(44, 44, 66, 0.95);
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .project-card {
+  background: rgba(60, 60, 90, 0.95);
+  box-shadow: 0 6px 16px rgba(255,255,255,0.05);
 }
 
 body.dark-mode a {
-  color: #4ea3ff;
+  color: #b88cff;
 }
 
-/* Fix header text in dark mode */
 body.dark-mode header p {
   color: #cccccc;
 }
 
-/* Dark mode toggle switch (top-right corner) */
+/* Dark mode toggle */
 .dark-toggle {
   position: fixed;
   top: 20px;
@@ -104,10 +131,7 @@ body.dark-mode header p {
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: #ccc;
   border-radius: 34px;
   transition: 0.4s;
@@ -116,58 +140,17 @@ body.dark-mode header p {
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px;
-  width: 20px;
-  left: 3px;
-  bottom: 3px;
+  height: 20px; width: 20px;
+  left: 3px; bottom: 3px;
   background-color: white;
   border-radius: 50%;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #7a3db8;
 }
 
 input:checked + .slider:before {
   transform: translateX(24px);
-}
-
-/* Project cards layout */
-.project-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-/* Brighter, modern project card style */
-.project-card {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  backdrop-filter: blur(2px);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Dark mode for cards */
-body.dark-mode .project-card {
-  background: rgba(44, 44, 44, 0.9);
-  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
-}
-
-/* Hover effect on project titles (optional, can remove if using cards) */
-#projects ul li {
-  transition: transform 0.2s, color 0.2s;
-  cursor: pointer;
-}
-
-#projects ul li:hover {
-  transform: translateX(5px);
-  color: #3498db;
 }
