@@ -1,4 +1,4 @@
-/* Reset & base styles */
+/* === Reset & base styles === */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +11,7 @@
     color: #333;
     background: #f9f9f9;
     padding: 20px;
+    padding-top: 60px; /* add space for top toggle */
     transition: background-color 0.4s, color 0.4s;
   }
   
@@ -60,22 +61,8 @@
     color: #777;
   }
   
-  /* Dark mode */
-  body.dark-mode {
-    background-color: #1e1e1e;
-    color: #f1f1f1;
-  }
   
-  body.dark-mode section {
-    background: #2c2c2c;
-    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-  }
-  
-  body.dark-mode a {
-    color: #4ea3ff;
-  }
-  
-  /* Top-right dark mode toggle with label */
+  /* === Top-right dark mode toggle with context === */
   .dark-toggle {
     position: fixed;
     top: 20px;
@@ -92,13 +79,14 @@
     z-index: 1000;
   }
   
-  /* Dark mode: adjust toggle bg */
+  /* Dark mode: adjust toggle bg & text color */
   body.dark-mode .dark-toggle {
     background: rgba(44,44,44,0.8);
     color: #f1f1f1;
   }
   
-  /* Switch styles (same as before) */
+  
+  /* === Toggle switch itself === */
   .switch {
     display: inline-block;
     width: 40px;
@@ -140,4 +128,20 @@
   
   input:checked + .slider:before {
     transform: translateX(20px);
+  }
+  
+  
+  /* === Dark mode styles for page === */
+  body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+  }
+  
+  body.dark-mode section {
+    background: #2c2c2c;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+  }
+  
+  body.dark-mode a {
+    color: #4ea3ff;
   }
