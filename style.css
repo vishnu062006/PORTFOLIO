@@ -154,3 +154,106 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(24px);
 }
+/* Hobbies section */
+#hobbies {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+  }
+  
+  #hobbies a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #7a3db8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  #hobbies a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Dark mode for hobbies section */
+  body.dark-mode #hobbies {
+    background: rgba(44, 44, 66, 0.95);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+  }
+/* Logo styling */
+.logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #7a3db8;
+    margin-bottom: 5px;
+  }
+  
+  /* Slide-out menu from left */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255,0.95);
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    padding: 60px 10px 10px 10px;
+    transition: left 0.4s ease;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  }
+  
+  #menu-toggle:checked + .menu-icon + .menu {
+    left: 0;
+  }
+  
+  .menu a {
+    color: #7a3db8;
+    text-decoration: none;
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  /* Dark mode slide menu */
+  body.dark-mode .menu {
+    background: rgba(44, 44, 66, 0.95);
+  }
+  
+  body.dark-mode .menu a {
+    color: #b88cff;
+  }
+
+/* Always visible menu on desktop */
+@media (min-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    padding: 60px 10px 10px 10px;
+    display: flex !important;
+    flex-direction: column;
+    border-radius: 0 8px 8px 0;
+  }
+
+  #menu-toggle,
+  .menu-icon {
+    display: none;
+  }
+}
+
+/* Add icons before menu links and underline on hover */
+.menu a::before {
+  content: "• ";
+  color: #7a3db8;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
