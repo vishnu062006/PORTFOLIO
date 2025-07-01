@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Base */
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -23,7 +24,7 @@ body {
 
 /* Hero section */
 .hero {
-  background: linear-gradient(135deg, #2ac3ee, #91efff);
+  background: linear-gradient(135deg, #7a3db8, #b88cff);
   color: white;
   text-align: center;
   padding: 100px 20px 80px;
@@ -34,11 +35,17 @@ body {
 .hero-content h1 {
   font-size: 2.8rem;
   margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.2s;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.4s;
 }
 
 .hero-btn {
@@ -49,10 +56,15 @@ body {
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.6s;
 }
 
 .hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   background: #f2e8ff;
   color: #5b2a9d;
 }
@@ -123,7 +135,7 @@ footer {
   color: #777;
 }
 
-/* Dark mode */
+/* Dark mode styles */
 body.dark-mode {
   background-color: #1e1e2f;
   color: #f1f1f1;
@@ -145,6 +157,15 @@ body.dark-mode a {
 
 body.dark-mode header p {
   color: #cccccc;
+}
+
+body.dark-mode .hero-btn {
+  background: #b88cff;
+  color: #fff;
+}
+
+body.dark-mode .hero-btn:hover {
+  background: #a070ff;
 }
 
 /* Dark mode toggle */
@@ -195,7 +216,7 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
-/* Logo styling */
+/* Logo */
 .logo {
   font-size: 1.4rem;
   font-weight: 600;
@@ -228,7 +249,7 @@ input:checked + .slider:before {
   transition: 0.4s;
 }
 
-/* Animate to X when open */
+/* Animate hamburger to X */
 #menu-toggle:checked + .menu-icon span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -280,7 +301,13 @@ input:checked + .slider:before {
   text-decoration: underline;
 }
 
-/* Hide checkbox */
+/* Hide menu checkbox */
 #menu-toggle {
   display: none;
+}
+
+/* Hero fade-in animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
