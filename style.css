@@ -205,19 +205,25 @@ input:checked + .slider:before {
 
 /* Slide-out menu */
 .menu {
-  display: none;
-  flex-direction: column;
-  background: rgba(255,255,255,0.95);
-  position: fixed;
-  top: 0;
-  left: -200px;
-  width: 200px;
-  height: 100%;
-  padding: 60px 10px 10px 10px;
-  transition: left 0.4s ease;
-  border-radius: 0 8px 8px 0;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
-}
+    display: none;
+    flex-direction: column;
+    background: rgba(44, 44, 66, 0.95); /* dark semi-transparent overlay */
+    backdrop-filter: blur(4px);
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    padding: 60px 10px 10px 10px;
+    transition: left 0.4s ease;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  }
+  
+  #menu-toggle:checked + .menu-icon + .menu {
+    left: 0;
+    display: flex;
+  }
 
 #menu-toggle:checked + .menu-icon + .menu {
   left: 0;
