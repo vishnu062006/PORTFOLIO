@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #d7c2ff, #f2e8ff);
@@ -154,100 +158,81 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(24px);
 }
-/* Hobbies section */
-#hobbies {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    backdrop-filter: blur(2px);
-  }
-  
-  #hobbies a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #7a3db8;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-  }
-  
-  #hobbies a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Dark mode for hobbies section */
-  body.dark-mode #hobbies {
-    background: rgba(44, 44, 66, 0.95);
-    box-shadow: 0 4px 12px rgba(255,255,255,0.05);
-  }
+
 /* Logo styling */
 .logo {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #7a3db8;
-    margin-bottom: 5px;
-  }
-  
-  /* Slide-out menu from left */
-  .menu {
-    display: flex;
-    flex-direction: column;
-    background: rgba(255,255,255,0.95);
-    position: fixed;
-    top: 0;
-    left: -200px;
-    width: 200px;
-    height: 100%;
-    padding: 60px 10px 10px 10px;
-    transition: left 0.4s ease;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
-  }
-  
-  #menu-toggle:checked + .menu-icon + .menu {
-    left: 0;
-  }
-  
-  .menu a {
-    color: #7a3db8;
-    text-decoration: none;
-    margin: 10px 0;
-    font-weight: 600;
-    font-size: 16px;
-  }
-  
-  /* Dark mode slide menu */
-  body.dark-mode .menu {
-    background: rgba(44, 44, 66, 0.95);
-  }
-  
-  body.dark-mode .menu a {
-    color: #b88cff;
-  }
-
-/* Always visible menu on desktop */
-@media (min-width: 768px) {
-  .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    padding: 60px 10px 10px 10px;
-    display: flex !important;
-    flex-direction: column;
-    border-radius: 0 8px 8px 0;
-  }
-
-  #menu-toggle,
-  .menu-icon {
-    display: none;
-  }
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #7a3db8;
+  margin-bottom: 5px;
 }
 
-/* Add icons before menu links and underline on hover */
+/* Hamburger menu */
+.hamburger-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  height: 4px;
+  background: #7a3db8;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Animate to X when open */
+#menu-toggle:checked + .menu-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-toggle:checked + .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked + .menu-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Slide-out menu */
+.menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(255,255,255,0.95);
+  position: fixed;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+  padding: 60px 10px 10px 10px;
+  transition: left 0.4s ease;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+}
+
+#menu-toggle:checked + .menu-icon + .menu {
+  left: 0;
+  display: flex;
+}
+
+/* Menu links */
+.menu a {
+  color: #7a3db8;
+  text-decoration: none;
+  margin: 10px 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
 .menu a::before {
   content: "• ";
   color: #7a3db8;
@@ -256,4 +241,13 @@ input:checked + .slider:before {
 
 .menu a:hover {
   text-decoration: underline;
+}
+
+/* Dark mode menu */
+body.dark-mode .menu {
+  background: rgba(44, 44, 66, 0.95);
+}
+
+body.dark-mode .menu a {
+  color: #b88cff;
 }
