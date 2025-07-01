@@ -119,3 +119,77 @@
   body.dark-mode a {
     color: #4ea3ff;
   }
+
+  /* Top horizontal bar with dark mode context */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    gap: 10px;
+    font-size: 1rem;
+    z-index: 1000;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  
+  /* Adjust page padding to avoid content hidden under topbar */
+  body {
+    padding-top: 60px;
+  }
+  
+  /* In dark mode: topbar changes */
+  body.dark-mode .topbar {
+    background: #2c2c2c;
+    color: #f1f1f1;
+  }
+  
+  /* Switch (same as before) */
+  .switch {
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: relative;
+    cursor: pointer;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #3498db;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(24px);
+  }
